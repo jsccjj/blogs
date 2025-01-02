@@ -1,4 +1,3 @@
-
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -10,7 +9,7 @@ metadata:
 spec:
   ingressClassName: cilium  # Using the updated field
   rules:
-  - host: argocd.k8s-sn.jscclab.io # Change it
+  - host: argocd.k8s-sn.jscclab.io # Change it based on your planning
     http:
       paths:
       - path: /
