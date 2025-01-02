@@ -1,0 +1,22 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+  annotations:
+    ingress.cilium.io/tls-passthrough: "enabled"
+    ingress.cilium.io/force-https: "enabled"
+spec:
+  ingressClassName: cilium  # Using the updated field
+  rules:
+  - host: argocd.k8s-sn.jscclab.io # Change it
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              name: https
