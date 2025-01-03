@@ -5,11 +5,11 @@ cluster:
   name: k3s-azure # Change it with the name you have given to your Cluster 3, matching the name in the cluster-info
   id: 3
 kubeProxyReplacement: true
-# clustermesh:
-#   useAPIServer: true
-#   apiserver:
-#     service:
-#       type: LoadBalancer
+clustermesh:
+  useAPIServer: true
+  apiserver:
+    service:
+      type: LoadBalancer
 k8sServiceHost: "192.168.200.4" # Change it with the IP of your Cluster 3 node
 k8sServicePort: 6443
 l2announcements:
